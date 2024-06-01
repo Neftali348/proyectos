@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controladores.LibrosController">
+    <children>
+        <VBox alignment="CENTER" layoutX="20.0" layoutY="20.0" prefWidth="760.0" spacing="10.0">
+            <TableView fx:id="tablaLibros" prefHeight="250.0" prefWidth="760.0">
+                <columns>
+                    <TableColumn fx:id="colISBN" text="ISBN" />
+                    <TableColumn fx:id="colTitulo" text="Título" />
+                    <TableColumn fx:id="colAutor" text="Autor" />
+                    <TableColumn fx:id="colAnio" text="Año Publicación" />
+                    <TableColumn fx:id="colEditorial" text="Editorial" />
+                    <TableColumn fx:id="colCantidad" text="Cantidad Disponibilidad" />
+                    <!-- Columna de acciones -->
+                    <TableColumn text="Acciones">
+                        <!-- Aquí puedes poner botones para acciones específicas -->
+                    </TableColumn>
+                </columns>
+            </TableView>
+
+            <HBox alignment="CENTER" spacing="10.0">
+                <VBox spacing="10.0">
+                    <Label text="ISBN" />
+                    <TextField fx:id="txISBN" />
+                    <Label text="Título" />
+                    <TextField fx:id="txTitulo" />
+                    <Label text="Autor" />
+                    <TextField fx:id="txAutor" />
+                </VBox>
+                <VBox spacing="10.0">
+                    <Label text="Año Publicación" />
+                    <TextField fx:id="txAnio" />
+                    <Label text="Editorial" />
+                    <TextField fx:id="txEditorial" />
+                    <Label text="Cantidad Disponibilidad" />
+                    <TextField fx:id="txCantidad" />
+                </VBox>
+            </HBox>
+
+            <HBox alignment="CENTER" spacing="10.0">
+                <Button onAction="#handleGuardar" text="Guardar" />
+                <Button onAction="#handleLimpiar" text="Limpiar" />
+                <Button onAction="#handleCancelar" text="Cancelar" />
+                <!-- Botones para ordenar -->
+                <Button onAction="#handleOrdenarPorISBN" text="Ordenar por ISBN" />
+                <Button onAction="#handleOrdenarPorTitulo" text="Ordenar por Título" />
+                <Button onAction="#handleOrdenarPorAutor" text="Ordenar por Autor" />
+            </HBox>
+        </VBox>
+    </children>
+</AnchorPane>
